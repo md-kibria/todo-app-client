@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app .container {
+  width: 450px;
+  height: 90%;
+  box-shadow: 1px 3px 10px #555;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 34px;
+  text-align: center;
+  color: #444;
+  font-weight: 400;
+}
+
+.addTodo {
+  width: calc(100% - 30px);
+  margin: auto;
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 3px 10px grey;
+}
+
+input {
+  border: none;
+
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type=text] {
+  /* height: 100%; */
+  padding: 10px 15px;
+  flex-grow: 1;
+  border-radius: 18px;
+  font-size: 17px;
+  color: #444;
+}
+
+input[type=button] {
+  height: 100%;
+  width: 80px;
+  border-radius: 18px;
+  background-color: rgb(172, 31, 172);
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: .3s ;
+}
+
+input[type=button]:hover {
+  background-color: rgb(218, 91, 218);
+}
+
+.todos {
+  /* width: calc(100% - 40px); */
+  margin: 20px auto;
+  /* overflow: scroll; */
+  height: 70%;
+  overflow: scroll;
+}
+
+.todo {
+  width: calc(100% - 40px);
+  height: 50px;
+  margin: 12px auto;
+  border-radius: 15px;
+  box-shadow: 1px 2px 10px grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: .2s;
+}
+
+.todo:hover {
+  box-shadow: 1px 3px 20px grey;
+}
+
+.todo .title {
+  flex-grow: 1;
+  font-weight: 400;
+  font-size: 20px;
+  color: #444;
+  margin: auto;
+}
+
+.todo .index, .todo .btn {
+  margin: auto 20px;
+}
+
+.todo .index {
+  color: #444;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.todo .btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;  
+}
+
+.todo .btn span svg path {
+  transition: .3s;
+}
+
+.todo .btn:hover span svg path {
+  fill: red;
 }
